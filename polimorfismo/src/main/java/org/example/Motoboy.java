@@ -1,20 +1,32 @@
+package org.example;
+
 import java.time.LocalDate;
 
+/**
+ * Classe que representa um Motoboy na empresa
+ * Estende Funcionario sem bonificação
+ */
 public class Motoboy extends Funcionario {
-    private String registro;
 
-    public Motoboy(String nome, String cpf, LocalDate dataNascimento, Genero genero, Setor setor, double salarioBase, String registro) {
-        super(nome, cpf, genero, setor, salarioBase, dataNascimento, dataNascimento); // dataAdmissao igual a dataNascimento se não tiver outro
-        this.registro = registro;
+    private String cnh;
+
+    public Motoboy(String nome, String cpf, String rg, Genero genero, Setor setor,
+                   double salario, LocalDate dataNascimento, LocalDate dataAdmissao, String cnh) {
+        super(nome, cpf, rg, genero, setor, salario, dataNascimento, dataAdmissao);
+        this.cnh = cnh;
     }
 
-    public String getRegistro() {
-        return registro;
+    public String getCnh() {
+        return cnh;
+    }
+
+    public void setCnh(String cnh) {
+        this.cnh = cnh;
     }
 
     @Override
     public double getSalarioFinal() {
-        return getSalarioBase(); // Sem bonificação
+        return getSalario(); // Sem bonificação
     }
 
     @Override
@@ -22,10 +34,9 @@ public class Motoboy extends Funcionario {
         return "Motoboy{" +
                 "nome='" + getNome() + '\'' +
                 ", cpf='" + getCpf() + '\'' +
-                ", genero=" + getGenero() +
-                ", salarioBase=" + getSalarioBase() +
-                ", salarioFinal=" + getSalarioFinal() +
-                ", registro='" + registro + '\'' +
+                ", setor=" + getSetor() +
+                ", salario=" + getSalario() +
+                ", cnh='" + cnh + '\'' +
                 '}';
     }
 }

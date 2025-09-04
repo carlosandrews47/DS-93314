@@ -1,5 +1,9 @@
 package org.example;
 
+/**
+ * Interface que define uma operação matemática básica
+ * Todas as implementações devem fornecer o método calcular
+ */
 public interface OperacaoMatematica {
-    public abstract double calcular(double a, double b);
+    double calcular(double a, double b);
 }

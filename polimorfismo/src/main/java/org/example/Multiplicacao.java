@@ -1,6 +1,10 @@
 package org.example;
 
-class Multiplicacao implements OperacaoMatematica {
+/**
+ * Implementação da operação de multiplicação matemática
+ * Realiza a multiplicação de dois números double
+ */
+public class Multiplicacao implements OperacaoMatematica {
     @Override
     public double calcular(double a, double b) {
         return a * b;

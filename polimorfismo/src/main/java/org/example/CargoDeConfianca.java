@@ -2,14 +2,20 @@ package org.example;
 
 import java.time.LocalDate;
 
-// Certifique-se de que Funcionario existe e está compilando
+/**
+ * Classe abstrata que representa um cargo de confiança na empresa
+ * Estende Funcionario e adiciona propriedade de bonificação
+ */
 public abstract class CargoDeConfianca extends Funcionario {
+
     private Bonificacao bonificacao;
 
-    public CargoDeConfianca(String nome, String cpf, String rg, Genero genero,
-                            double salarioBase, LocalDate dataNascimento, LocalDate dataAdmissao,
+    // Construtor corrigido - adicionado parâmetro Setor
+    public CargoDeConfianca(String nome, String cpf, String rg, Genero genero, Setor setor,
+                            double salario, LocalDate dataNascimento, LocalDate dataAdmissao,
                             Bonificacao bonificacao) {
-        super(nome, cpf, rg, genero, salarioBase, dataNascimento, dataAdmissao);
+        // Chamada correta ao construtor da superclasse
+        super(nome, cpf, rg, genero, setor, salario, dataNascimento, dataAdmissao);
         this.bonificacao = bonificacao;
     }
 
@@ -17,6 +23,7 @@ public abstract class CargoDeConfianca extends Funcionario {
         return bonificacao;
     }
 
-    @Override
-    public abstract double getSalarioFinal();
+    public void setBonificacao(Bonificacao bonificacao) {
+        this.bonificacao = bonificacao;
+    }
 }

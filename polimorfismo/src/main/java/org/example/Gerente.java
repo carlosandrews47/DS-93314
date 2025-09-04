@@ -4,14 +4,15 @@ import java.time.LocalDate;
 
 public class Gerente extends CargoDeConfianca {
 
-    public Gerente(String nome, String cpf, String rg, Genero genero,
+    // Construtor atualizado com parâmetro Setor
+    public Gerente(String nome, String cpf, String rg, Genero genero, Setor setor,
                    double salarioBase, LocalDate dataNascimento, LocalDate dataAdmissao) {
-        super(nome, cpf, rg, genero, salarioBase, dataNascimento, dataAdmissao, Bonificacao.GERENTE);
+        super(nome, cpf, rg, genero, setor, salarioBase, dataNascimento, dataAdmissao, Bonificacao.GERENTE);
     }
 
     @Override
     public double getSalarioFinal() {
-        return getSalarioBase() * (1 + getBonificacao().getValor());
+        return getSalario() * (1 + getBonificacao().getValor());
     }
 
     @Override
@@ -19,6 +20,8 @@ public class Gerente extends CargoDeConfianca {
         return "Gerente{" +
                 "nome='" + getNome() + '\'' +
                 ", cpf='" + getCpf() + '\'' +
+                ", setor=" + getSetor() +
+                ", salarioBase=" + getSalario() +
                 ", salarioFinal=" + getSalarioFinal() +
                 '}';
     }
