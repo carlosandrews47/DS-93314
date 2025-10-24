@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de HTML - Estrutura Básica</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .content-section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #333;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #667eea;
+            display: inline-block;
+        }
+
+        /* Estilos para títulos hierárquicos */
+        .hierarchy-container {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        h1 { color: #2c3e50; font-size: 2.2em; margin: 15px 0; }
+        h2 { color: #34495e; font-size: 1.8em; margin: 12px 0; }
+        h3 { color: #5d6d7e; font-size: 1.5em; margin: 10px 0; }
+        h4 { color: #7f8c8d; font-size: 1.3em; margin: 8px 0; }
+        h5 { color: #95a5a6; font-size: 1.1em; margin: 6px 0; }
+        h6 { color: #bdc3c7; font-size: 1em; margin: 4px 0; font-style: italic; }
+
+        /* Linha horizontal estilizada */
+        hr {
+            border: none;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #667eea, transparent);
+            margin: 30px 0;
+            border-radius: 2px;
+        }
+
+        /* Parágrafo estilizado */
+        p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+
+        /* Lista estilizada */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        ul li {
+            background: white;
+            margin: 10px 0;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        ul li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        ul li:before {
+            content: '▶';
+            position: absolute;
+            left: 20px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Botão de retorno estilizado */
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.3em; }
+            h4 { font-size: 1.1em; }
+            h5 { font-size: 1em; }
+            h6 { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Aula de HTML</h1>
+            <p>Estrutura básica e elementos fundamentais</p>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Hierarquia de Títulos</h2>
+            <div class="hierarchy-container">
+                <h1>Título Nível 1 - Principal</h1>
+                <h2>Título Nível 2 - Seção</h2>
+                <h3>Título Nível 3 - Subseção</h3>
+                <h4>Título Nível 4 - Tópico</h4>
+                <h5>Título Nível 5 - Subtópico</h5>
+                <h6>Título Nível 6 - Detalhe</h6>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="content-section">
+            <h2 class="section-title">Parágrafo de Exemplo</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At esse quod deleniti neque nobis quidem tenetur iure possimus, perspiciatis non, distinctio, cum amet! Aliquam odit dolores dicta nostrum officiis mollitia! Expedita doloremque, ullam, consequatur nam accusamus consequuntur commodi ducimus harum explicabo atque autem porro optio iste est sapiente aut quos!</p>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Lista com Marcadores</h2>
+            <ul>
+                <li>Elemento de lista 1</li>
+                <li>Elemento de lista 2</li>
+                <li>Elemento de lista 3</li>
+                <li>Elemento de lista 4</li>
+                <li>Elemento de lista 5</li>
+            </ul>
+        </div>
+
+        <div class="button-container">
+            <a href="index.html" class="back-button">🏠 Voltar para Home</a>
+        </div>
+    </div>
+</body>
+</html>
