@@ -1,20 +1,20 @@
 
 import './App.css'
-import Mensagem from './components/Mensagem'
+import AdicionarAluno from './componentes/AdcionarAluno'
+import Footer from './componentes/Footer'
+import Header from './componentes/Header'
 
 function App() {
- 
-
-  return (
-    // fragment .
-    <>
-    <h1>Carlos Andre</h1>
-    <Mensagem></Mensagem>
-    <Mensagem></Mensagem>
-    <Mensagem></Mensagem>
-
-    </>
   
+  return (
+    <>
+    <Header/>
+      <h1>Sistema Escolar</h1>
+      <div>
+        <AdicionarAluno/>
+      </div>
+      <Footer/>
+    </>
   )
 }
 
