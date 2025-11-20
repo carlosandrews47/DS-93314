@@ -1,0 +1,112 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.home-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.home-container p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Cards de funcionalidades */
+.funcionalidades-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.funcionalidade-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.funcionalidade-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.funcionalidade-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.funcionalidade-card p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    opacity: 0.8;
+}
+
+/* Versão alternativa mais simples */
+.home-container.alternative {
+    background: #f8f9fa;
+    color: #333;
+}
+
+.home-container.alternative h1 {
+    color: #343a40;
+    text-shadow: none;
+}
+
+.home-container.alternative p {
+    color: #6c757d;
+}
+
+.home-container.alternative .funcionalidade-card {
+    background: white;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.home-container.alternative .funcionalidade-card h3 {
+    color: #495057;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .home-container {
+        padding: 1rem;
+        min-height: 60vh;
+    }
+    
+    .home-container h1 {
+        font-size: 2rem;
+    }
+    
+    .home-container p {
+        font-size: 1.1rem;
+    }
+    
+    .funcionalidades-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .funcionalidade-card {
+        padding: 1.5rem;
+    }
+}
