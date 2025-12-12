@@ -1,0 +1,5 @@
+1;João Pereira;11987654321;Rua das Flores 123;SP
+2;Maria da Silva;11923456789;Av Paulista 90;SP
+3;Carlos Souza;11944556677;Rua Azul 33;RJ
+
+id;nome;telefone;endereco;estado
